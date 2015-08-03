@@ -54,6 +54,9 @@ if not filer_settings.FILER_IMAGE_MODEL:
             if self.date_taken is None:
                 self.date_taken = now()
             super(Image, self).save(*args, **kwargs)
+
+	class Meta:
+            app_label = 'filer'
 else:
     # This is just an alias for the real model defined elsewhere
     # to let imports works transparently
